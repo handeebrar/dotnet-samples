@@ -51,5 +51,20 @@ namespace AspNetCoreMvc2.Introduction.Controllers
         {
             return NotFound();
         }
+
+        public RedirectResult Index6()
+        {
+            return Redirect("/Home/Index3");
+        }
+
+        public IActionResult Index7()
+        {
+            return RedirectToAction("Index2");
+        }
+
+        public IActionResult Index8()
+        {
+            return RedirectToRoute("default");
+        }
     }
 }

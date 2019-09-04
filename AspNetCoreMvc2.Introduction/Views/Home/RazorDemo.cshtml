@@ -40,10 +40,11 @@
     <p>@DateTime.Now</p>
     <p>3 days ago was @(DateTime.Now - TimeSpan.FromDays(3))</p>
     @{
-    var number = 10;
+        var number = 10;
     }
     <p>@number</p>
 
+    @* Conditional operations**@
     @if (number < 10)
     {
         <p>Your number is less than 10 !</p>
@@ -56,5 +57,32 @@
     {
         <p>Your number is greater than 10</p>
     }
+
+    @* Loops *@
+    FOR
+    @for (int i = 0; i < Model.Employees.Count; i++)
+    {
+        <br />@Model.Employees[i].FirstName
+    }
+
+    <br />
+
+    WHILE
+    @{ var counter = 0; }
+    @while (counter < Model.Employees.Count)
+    {
+        <br />@Model.Employees[counter].LastName
+        counter++;
+    }
+
+    <br />
+
+    DO-WHILE
+    @{ var counter2 = 0; }
+    @do
+    {
+        <br />@Model.Employees[counter2].CityId
+        counter2++;
+    } while (counter2 < Model.Employees.Count);
 </body>
 </html>

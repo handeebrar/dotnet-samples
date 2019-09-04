@@ -41,5 +41,15 @@ namespace AspNetCoreMvc2.Introduction.Controllers
 
             return View(model);
         }
+
+        public IActionResult Index4()
+        {
+            return StatusCode(400);
+        }
+
+        public StatusCodeResult Index5()
+        {
+            return NotFound();
+        }
     }
 }

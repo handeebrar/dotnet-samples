@@ -43,5 +43,18 @@
     var number = 10;
     }
     <p>@number</p>
+
+    @if (number < 10)
+    {
+        <p>Your number is less than 10 !</p>
+    }
+    else if (number == 10)
+    {
+        <p>Your number is @number</p>
+    }
+    else
+    {
+        <p>Your number is greater than 10</p>
+    }
 </body>
 </html>

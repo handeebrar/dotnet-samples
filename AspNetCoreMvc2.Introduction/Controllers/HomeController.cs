@@ -105,7 +105,7 @@ namespace AspNetCoreMvc2.Introduction.Controllers
             {
                 new Employee{Id=1, FirstName="A", LastName="B", CityId=6 },
                 new Employee{Id=1, FirstName="C", LastName="D", CityId=6 },
-                new Employee{Id=1, FirstName="E", LastName="F", CityId=45 }
+                new Employee{Id=1, FirstName="E", LastName="F", CityId=34 }
             };
 
             if (String.IsNullOrEmpty(key))

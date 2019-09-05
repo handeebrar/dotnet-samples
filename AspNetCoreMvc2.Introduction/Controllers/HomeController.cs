@@ -117,6 +117,6 @@ namespace AspNetCoreMvc2.Introduction.Controllers
             var result = employees.Where(e=>e.FirstName.ToLower().Contains(key));
 
             return Json(result);
-        }
+        } 
     }
 }

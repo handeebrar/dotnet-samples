@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AspNetCoreMvc2.Introduction
@@ -27,12 +28,14 @@ namespace AspNetCoreMvc2.Introduction
             }
 
             //middleware
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default", template: "{controller=home}/{action=index}/{id?}"
-                    );
-            });
+            app.UseMvc(ConfigureRoutes);
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            //istediğimiz kadar route mapleyebiliriz
+            routeBuilder.MapRoute("Default","{controller=Home}/{action=Index2}/{id?}");
+            routeBuilder.MapRoute("MyRoute", "A/{controller=Home}/{action=Index3}/{id?}");
         }
     }
 }

@@ -11,5 +11,9 @@
         @RenderBody()
     </div>
     <div>Footer</div>
+    <div>
+        @* false -> eğer o sayfada MySection diye bir section yoksa render etme (defaultu true)*@
+        @RenderSection("MySection",false)
+    </div>
 </body>
 </html>

@@ -98,5 +98,25 @@ namespace AspNetCoreMvc2.Introduction.Controllers
 
             return View(model);
         }
+
+        public JsonResult Index10(string key)
+        {
+            List<Employee> employees = new List<Employee>
+            {
+                new Employee{Id=1, FirstName="A", LastName="B", CityId=6 },
+                new Employee{Id=1, FirstName="C", LastName="D", CityId=6 },
+                new Employee{Id=1, FirstName="E", LastName="F", CityId=45 }
+            };
+
+            if (String.IsNullOrEmpty(key))
+            {
+                return Json(employees);
+            }
+
+            //Linq query
+            var result = employees.Where(e=>e.FirstName.ToLower().Contains(key));
+
+            return Json(result);
+        }
     }
 }

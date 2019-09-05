@@ -22,10 +22,15 @@ namespace AspNetCoreMvc2.Introduction.TagHelpers
             };
         }
 
+        //count'ı okuyacak değer - isimlendirme standartına uyulması gerekiyor
+        private const string ListCountAttributeName = "count";
+        [HtmlAttributeName(ListCountAttributeName)]
+        public int ListCount { get; set; } //count değerini ListCount'a eşler - örnekte 2
+        
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "div";
-            var query = _employees;
+            var query = _employees.Take(ListCount);
 
             StringBuilder stringBuilder = new StringBuilder();
 

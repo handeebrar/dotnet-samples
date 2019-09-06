@@ -19,7 +19,7 @@ namespace AspNetCoreMvc2.Introduction
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Databse=SchoolDb;Trusted_Connection=true";
+            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=SchoolDb;Trusted_Connection=true";
             services.AddDbContext < SchoolContext >(options => options.UseSqlServer(connection));
         }
 

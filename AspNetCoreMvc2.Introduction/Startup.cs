@@ -26,7 +26,8 @@ namespace AspNetCoreMvc2.Introduction
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            //env.EnvironmentName = EnvironmentName.Production;
+            if (env.IsDevelopment()) //geliştirme ortamındaysak developera teknik hatayı göster prodda gösterme
             {
                 app.UseDeveloperExceptionPage();
             }

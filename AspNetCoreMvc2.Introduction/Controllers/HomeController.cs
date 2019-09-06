@@ -18,6 +18,7 @@ namespace AspNetCoreMvc2.Introduction.Controllers
         //controller'dan view çalıştırma
         public ViewResult Index2()
         {
+            throw new Exception("Some exception occured!");
             return View();
         }
 

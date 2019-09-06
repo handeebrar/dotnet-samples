@@ -8,6 +8,9 @@
 <body>
     <div>Menu</div>
     <div>
+        @await Component.InvokeAsync("StudentList", new { filter = "a"});@*buradaki filterı bir query string vsden dinamik olarak alamıyoruz çünkü view conponentlerin böyle bir özelliği yok*@
+    </div>
+    <div>
         @RenderBody()
     </div>
     <div>Footer</div>

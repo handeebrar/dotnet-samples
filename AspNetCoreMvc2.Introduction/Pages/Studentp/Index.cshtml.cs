@@ -18,9 +18,11 @@ namespace AspNetCoreMvc2.Introduction.Pages.Studentp
             _context = context;
         }
         public List<Student> Students { get; set; }
-        public void OnGet()
+        public void OnGet(string search)
         {
-            Students = _context.Students.ToList();
+            Students = string.IsNullOrEmpty(search)?
+                _context.Students.ToList():
+                _context.Students.Where(s=>s.FirstName.ToLower().Contains(search)).ToList();
         }
 
         [BindProperty]

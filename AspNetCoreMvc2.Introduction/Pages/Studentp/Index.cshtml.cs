@@ -29,7 +29,7 @@ namespace AspNetCoreMvc2.Introduction.Pages.Studentp
         {
             _context.Students.Add(Student);
             _context.SaveChanges();
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Studentp/Index");
         }
     }
 }

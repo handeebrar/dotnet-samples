@@ -38,7 +38,7 @@ namespace AspNetCoreMvc2.Introduction
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
         {
             //istediğimiz kadar route mapleyebiliriz
-            routeBuilder.MapRoute("Default","{controller=Home}/{action=Index2}/{id?}");
+            routeBuilder.MapRoute("Default","{controller=Filter}/{action=Index}/{id?}");
             routeBuilder.MapRoute("MyRoute", "A/{controller=Home}/{action=Index3}/{id?}");
         }
     }

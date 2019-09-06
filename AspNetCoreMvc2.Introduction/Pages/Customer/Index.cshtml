@@ -1,4 +1,5 @@
 ﻿@page
+@*code behind*@
 @model AspNetCoreMvc2.Introduction.Pages.Customer.IndexModel
 @{
     Layout = null;
@@ -14,5 +15,6 @@
 <body>
     <h1>Hello from my first razor page !</h1>
     <h2>Date: @DateTime.Now</h2>
+    <h2>@Model.Message</h2>
 </body>
 </html>

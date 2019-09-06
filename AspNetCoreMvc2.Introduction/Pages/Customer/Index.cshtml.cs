@@ -9,9 +9,10 @@ namespace AspNetCoreMvc2.Introduction.Pages.Customer
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public string Message { get; set; }
+        public void OnGet() //uygulamanın ilk load eventi gibi düşünebiliriz
         {
-
+            Message += "Date is " + DateTime.Now.ToString();
         }
     }
 }

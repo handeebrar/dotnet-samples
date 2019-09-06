@@ -17,6 +17,9 @@ namespace AspNetCoreMvc2.Introduction.ViewComponents
         }
         public ViewViewComponentResult Invoke(String filter)
         {
+            //eğer biz query stringden aldığımız key ile filtreleme yapmak istiyorsak
+            filter = HttpContext.Request.Query["filter"];
+
             //view'a model göndermemiz gerekir
             return View(new StudentListViewModel
             {

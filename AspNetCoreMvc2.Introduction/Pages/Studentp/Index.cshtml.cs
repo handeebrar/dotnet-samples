@@ -22,5 +22,14 @@ namespace AspNetCoreMvc2.Introduction.Pages.Studentp
         {
             Students = _context.Students.ToList();
         }
+
+        [BindProperty]
+        public Student Student { get; set; }
+        public IActionResult OnPost()
+        {
+            _context.Students.Add(Student);
+            _context.SaveChanges();
+            return RedirectToPage("/Index");
+        }
     }
 }
